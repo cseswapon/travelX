@@ -23,8 +23,12 @@ function totalPrice()
 {
     const mars = ticketInput('mars') * 50;
     const moon = ticketInput('moon') * 58;
-    const totalPrice = mars + moon;
-    document.getElementById('total-price').innerText = totalPrice;
+    const sutotal = mars + moon;
+    const totalTax = parseFloat((sutotal * .1).toFixed(2));
+    const totalPrice = sutotal + totalTax;
+    document.getElementById('total-price').innerText = sutotal;
+    document.getElementById('total-tax').innerText = totalTax;
+    document.getElementById('total-cost').innerText = totalPrice;
 }
 
 // mars travel //
